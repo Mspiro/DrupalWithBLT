@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Composer\Plugin\VendorHardening;
 
 use Composer\Package\RootPackageInterface;
@@ -85,8 +83,6 @@ class ConfigTest extends TestCase {
 
   /**
    * @covers ::getAllCleanupPaths
-   *
-   * @runInSeparateProcess
    */
   public function testMixedCaseConfigCleanupPackages() {
     // Root package has configuration in extra.

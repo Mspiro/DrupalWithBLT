@@ -92,10 +92,7 @@
       node.nodeType === Node.ELEMENT_NODE &&
         node.nodeName === 'SCRIPT' &&
         node.dataset &&
-        node.dataset.bigPipeReplacementForPlaceholderWithId &&
-        typeof drupalSettings.bigPipePlaceholderIds[
-          node.dataset.bigPipeReplacementForPlaceholderWithId
-        ] !== 'undefined',
+        node.dataset.bigPipeReplacementForPlaceholderWithId,
     );
   }
 
@@ -108,13 +105,6 @@
   function checkMutationAndProcess(node) {
     if (checkMutation(node)) {
       processReplacement(node);
-    }
-    // Checks if parent node of target node has not been processed, which can
-    // occur if the script node was first observed with empty content and then
-    // the child text node was added in full later.
-    // @see `@ingroup large_chunk` for more information.
-    else if (checkMutation(node.parentNode)) {
-      processReplacement(node.parentNode);
     }
   }
 

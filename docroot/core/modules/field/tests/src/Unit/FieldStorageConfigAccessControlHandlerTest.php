@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\field\Unit;
 
 use Drupal\Component\Uuid\UuidInterface;

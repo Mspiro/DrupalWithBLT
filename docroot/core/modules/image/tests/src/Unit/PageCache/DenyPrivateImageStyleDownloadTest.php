@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\image\Unit\PageCache;
 
 use Drupal\Core\PageCache\ResponsePolicyInterface;

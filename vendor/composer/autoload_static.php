@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit13604c975c38a0009927368ccede8e67
+class ComposerStaticInit37894e8f91efe43b9bebaae07d40bc03
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -118,6 +118,7 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
         'L' => 
         array (
             'League\\Container\\' => 17,
+            'Lcatlett\\BltDdev\\' => 17,
         ),
         'G' => 
         array (
@@ -130,6 +131,7 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
         ),
         'E' => 
         array (
+            'Example\\' => 8,
             'Enlightn\\SecurityChecker\\' => 25,
             'Egulias\\EmailValidator\\' => 23,
         ),
@@ -394,8 +396,8 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -429,6 +431,10 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
         ),
+        'Lcatlett\\BltDdev\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lcatlett/blt-ddev/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -452,6 +458,10 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
         'Grasmash\\Expander\\' => 
         array (
             0 => __DIR__ . '/..' . '/grasmash/expander/src',
+        ),
+        'Example\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/blt/src',
         ),
         'Enlightn\\SecurityChecker\\' => 
         array (
@@ -563,8 +573,8 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
         ),
         'Behat\\Mink\\Driver\\' => 
         array (
-            0 => __DIR__ . '/..' . '/behat/mink-selenium2-driver/src',
-            1 => __DIR__ . '/..' . '/behat/mink-browserkit-driver/src',
+            0 => __DIR__ . '/..' . '/behat/mink-browserkit-driver/src',
+            1 => __DIR__ . '/..' . '/behat/mink-selenium2-driver/src',
         ),
         'Behat\\Mink\\' => 
         array (
@@ -738,11 +748,11 @@ class ComposerStaticInit13604c975c38a0009927368ccede8e67
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit13604c975c38a0009927368ccede8e67::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit13604c975c38a0009927368ccede8e67::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit13604c975c38a0009927368ccede8e67::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInit13604c975c38a0009927368ccede8e67::$fallbackDirsPsr0;
-            $loader->classMap = ComposerStaticInit13604c975c38a0009927368ccede8e67::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit37894e8f91efe43b9bebaae07d40bc03::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit37894e8f91efe43b9bebaae07d40bc03::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit37894e8f91efe43b9bebaae07d40bc03::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit37894e8f91efe43b9bebaae07d40bc03::$fallbackDirsPsr0;
+            $loader->classMap = ComposerStaticInit37894e8f91efe43b9bebaae07d40bc03::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -8,6 +8,11 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"
     },
+    "autoload": {
+        "psr-4": {
+            "Example\\": "blt/src/"
+        }
+    },
     "repositories": [
         {
             "type": "composer",
@@ -18,12 +23,13 @@
         "composer/installers": "^2.0",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
-        "drupal/core-recommended": "^10.2"
+        "drupal/core-recommended": "^10.2",
+        "lcatlett/blt-ddev": "dev-lcatlett-patch-1"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
@@ -95,6 +101,6 @@
         }
     },
     "require-dev": {
-        "thegbomb/blt-ddev": "*"
+        "thegbomb/blt-ddev": "^1.0"
     }
 }

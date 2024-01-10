@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Core\Entity\Access;
 
 use Drupal\Core\Entity\Entity\Access\EntityViewDisplayAccessControlHandler;

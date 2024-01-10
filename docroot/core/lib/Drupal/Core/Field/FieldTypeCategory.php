@@ -3,6 +3,7 @@
 namespace Drupal\Core\Field;
 
 use Drupal\Core\Plugin\PluginBase;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Default object used for field_type_categories plugins.
@@ -14,14 +15,14 @@ class FieldTypeCategory extends PluginBase implements FieldTypeCategoryInterface
   /**
    * {@inheritdoc}
    */
-  public function getLabel(): string|\Stringable {
+  public function getLabel(): TranslatableMarkup {
     return $this->pluginDefinition['label'];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getDescription(): string|\Stringable {
+  public function getDescription(): TranslatableMarkup {
     return $this->pluginDefinition['description'];
   }
 

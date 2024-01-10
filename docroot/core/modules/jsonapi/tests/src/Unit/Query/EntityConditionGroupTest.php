@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\jsonapi\Unit\Query;
 
 use Drupal\jsonapi\Query\EntityConditionGroup;

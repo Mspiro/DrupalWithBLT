@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\image\Unit;
 
 use Drupal\Component\Utility\Crypt;

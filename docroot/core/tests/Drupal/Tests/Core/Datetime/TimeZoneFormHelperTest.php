@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Core\Datetime;
 
 use Drupal\Core\Datetime\TimeZoneFormHelper;

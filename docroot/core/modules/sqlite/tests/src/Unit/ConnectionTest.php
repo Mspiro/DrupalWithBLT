@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\sqlite\Unit;
 
 use Drupal\sqlite\Driver\Database\sqlite\Connection;

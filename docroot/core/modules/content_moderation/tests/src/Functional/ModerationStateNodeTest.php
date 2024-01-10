@@ -9,7 +9,6 @@ use Drupal\node\Entity\Node;
  * Tests general content moderation workflow for nodes.
  *
  * @group content_moderation
- * @group #slow
  */
 class ModerationStateNodeTest extends ModerationStateTestBase {
 

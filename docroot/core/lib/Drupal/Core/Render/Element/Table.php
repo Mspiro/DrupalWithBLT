@@ -24,86 +24,34 @@ use Drupal\Component\Utility\Html as HtmlUtility;
  *   providing responsive tables.  Defaults to TRUE.
  * - #sticky: Indicates whether to add the drupal.tableheader library that makes
  *   table headers always visible at the top of the page. Defaults to FALSE.
- * - #footer: Table footer rows, in the same format as the #rows property.
- * - #caption: A localized string for the <caption> tag.
  *
- * Usage example 1: A simple form with an additional information table which
- * doesn't include any other form field.
+ * Usage example:
  * @code
- * // Table header.
- * $header = [
- *   'name' => $this->t('Name'),
- *   'age' => $this->t('Age'),
- *   'email' => $this->t('Email'),
- * ];
- *
- * // Default data rows (these can be fetched from the database or any other
- * // source).
- * $default_rows = [
- *   ['name' => 'John', 'age' => 28, 'email' => 'john@example.com'],
- *   ['name' => 'Jane', 'age' => 25, 'email' => 'jane@example.com'],
- * ];
- *
- * // Prepare rows for the table element. We just display the information with
- * // #markup.
- * $rows = [];
- * foreach ($default_rows as $default_row) {
- *   $rows[] = [
- *     'name' => ['data' => ['#markup' => $default_row['name']]],
- *     'age' => ['data' => ['#markup' => $default_row['age']]],
- *     'email' => ['data' => ['#markup' => $default_row['email']]],
- *   ];
- * }
- *
- * // Now set the table element.
- * $form['information'] = [
- *   '#type' => 'table',
- *   '#header' => $header,
- *   '#rows' => $rows,  // Add the prepared rows here.
- *   '#empty' => $this->t('No entries available.'),
- * ];
- * @endcode
- *
- * Usage example 2: A table of form fields without the #rows property defined.
- * @code
- * // Set the contact element as a table render element with no #rows property.
- * // Next add five rows as sub-elements (or children) that will populate
- * // automatically the #rows property in preRenderTable().
- * $form['contacts'] = [
+ * $form['contacts'] = array(
  *   '#type' => 'table',
  *   '#caption' => $this->t('Sample Table'),
- *   '#header' => [$this->t('Name'), $this->t('Phone')],
- *   '#rows' => [],
- *   '#empty' => $this->t('No entries available.'),
- * ];
+ *   '#header' => array($this->t('Name'), $this->t('Phone')),
+ * );
  *
- * // Add arbitrarily four rows to the table. Each row contains two fields
- * // (name and phone). The preRenderTable() method will add each sub-element
- * // (or children) of the table element to the #rows property.
  * for ($i = 1; $i <= 4; $i++) {
- *    // Add foo and baz classes for each row.
- *   $form['contacts'][$i]['#attributes'] = ['class' => ['foo', 'baz']];
- *
- *   // Set the first column.
- *   $form['contacts'][$i]['name'] = [
+ *   $form['contacts'][$i]['#attributes'] = array('class' => array('foo', 'baz'));
+ *   $form['contacts'][$i]['name'] = array(
  *     '#type' => 'textfield',
  *     '#title' => $this->t('Name'),
  *     '#title_display' => 'invisible',
- *   ];
+ *   );
  *
- *    // Set the second column.
- *   $form['contacts'][$i]['phone'] = [
+ *   $form['contacts'][$i]['phone'] = array(
  *     '#type' => 'tel',
  *     '#title' => $this->t('Phone'),
  *     '#title_display' => 'invisible',
- *   ];
+ *   );
  * }
  *
- * // Add the fifth row as a colspan of two columns.
- * $form['contacts'][]['colspan_example'] = [
+ * $form['contacts'][]['colspan_example'] = array(
  *   '#plain_text' => 'Colspan Example',
- *   '#wrapper_attributes' => ['colspan' => 2, 'class' => ['foo', 'bar']],
- * ];
+ *   '#wrapper_attributes' => array('colspan' => 2, 'class' => array('foo', 'bar')),
+ * );
  * @endcode
  * @see \Drupal\Core\Render\Element\Tableselect
  *

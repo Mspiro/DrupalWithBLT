@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\media\Unit;
 
 use Drupal\Core\KeyValueStore\KeyValueMemoryFactory;

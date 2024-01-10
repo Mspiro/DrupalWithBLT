@@ -12,7 +12,6 @@
 namespace Symfony\Bridge\Twig\Node;
 
 use Twig\Compiler;
-use Twig\Extension\CoreExtension;
 use Twig\Node\Expression\ArrayExpression;
 use Twig\Node\Expression\ConstantExpression;
 use Twig\Node\Expression\FunctionExpression;
@@ -51,7 +50,7 @@ final class SearchAndRenderBlockNode extends FunctionExpression
                         $labelIsExpression = false;
 
                         // Only insert the label into the array if it is not empty
-                        if (null !== $label->getAttribute('value') && false !== $label->getAttribute('value') && '' !== (string) $label->getAttribute('value')) {
+                        if (!twig_test_empty($label->getAttribute('value'))) {
                             $originalVariables = $variables;
                             $variables = new ArrayExpression([], $lineno);
                             $labelKey = new ConstantExpression('label', $lineno);
@@ -98,12 +97,7 @@ final class SearchAndRenderBlockNode extends FunctionExpression
 
                         // Check at runtime whether the label is empty.
                         // If not, add it to the array at runtime.
-                        if (method_exists(CoreExtension::class, 'testEmpty')) {
-                            $compiler->raw('(CoreExtension::testEmpty($_label_ = ');
-                        } else {
-                            $compiler->raw('(twig_test_empty($_label_ = ');
-                        }
-
+                        $compiler->raw('(twig_test_empty($_label_ = ');
                         $compiler->subcompile($label);
                         $compiler->raw(') ? [] : ["label" => $_label_])');
                     }

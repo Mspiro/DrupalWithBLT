@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\rest\Unit\Entity;
 
 use Drupal\rest\Entity\RestResourceConfig;

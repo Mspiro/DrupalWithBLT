@@ -18,7 +18,6 @@ use Drupal\Tests\BrowserTestBase;
  * consistency in the database.
  *
  * @group forum
- * @group #slow
  */
 class ForumTest extends BrowserTestBase {
 

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Core\Database;
 
 use Drupal\Core\Database\Database;
@@ -39,7 +37,7 @@ class LogTest extends UnitTestCase {
     $result = (new StubConnection($pdo, []))->testLogCaller();
     $this->assertSame([
       'file' => __FILE__,
-      'line' => 39,
+      'line' => 37,
       'function' => 'testContribDriverLog',
       'class' => 'Drupal\Tests\Core\Database\LogTest',
       'type' => '->',
@@ -53,7 +51,7 @@ class LogTest extends UnitTestCase {
     $result = (new Log())->findCaller();
     $this->assertSame([
       'file' => __FILE__,
-      'line' => 53,
+      'line' => 51,
       'function' => 'testContribDriverLog',
       'class' => 'Drupal\Tests\Core\Database\LogTest',
       'type' => '->',

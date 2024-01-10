@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\contact\Unit;
 
 use Drupal\contact\Plugin\views\field\ContactLink;

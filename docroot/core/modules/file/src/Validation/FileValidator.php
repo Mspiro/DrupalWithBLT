@@ -2,7 +2,6 @@
 
 namespace Drupal\file\Validation;
 
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Validation\ConstraintManager;
 use Drupal\Core\Validation\DrupalTranslator;
@@ -54,12 +53,7 @@ class FileValidator implements FileValidatorInterface {
       else {
         // Create the constraint.
         // Options are an associative array of constraint properties and values.
-        try {
-          $constraints[] = $this->constraintManager->create($validator, $options);
-        }
-        catch (PluginNotFoundException) {
-          @trigger_error(sprintf('Passing invalid constraint plugin ID "%s" in the list of $validators to Drupal\file\Validation\FileValidator::validate() is deprecated in drupal:10.2.0 and will throw an exception in drupal:11.0.0. See https://www.drupal.org/node/3363700', $validator), E_USER_DEPRECATED);
-        }
+        $constraints[] = $this->constraintManager->create($validator, $options);
       }
     }
 

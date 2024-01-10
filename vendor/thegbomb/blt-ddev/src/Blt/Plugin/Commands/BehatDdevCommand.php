@@ -1,6 +1,6 @@
 <?php
 
-namespace thegbomb\BltDdev\Blt\Plugin\Commands;
+namespace Lcatlett\BltDdev\Blt\Plugin\Commands;
 
 use Acquia\BltBehat\Blt\Plugin\Commands\BehatTestCommand;
 

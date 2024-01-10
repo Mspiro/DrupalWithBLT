@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\file\Unit;
 
 use Drupal\Component\Transliteration\PhpTransliteration;

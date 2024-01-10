@@ -6,7 +6,6 @@ namespace Drupal\Tests\content_moderation\Functional;
  * Tests moderation state node type integration.
  *
  * @group content_moderation
- * @group #slow
  */
 class ModerationStateNodeTypeTest extends ModerationStateTestBase {
 

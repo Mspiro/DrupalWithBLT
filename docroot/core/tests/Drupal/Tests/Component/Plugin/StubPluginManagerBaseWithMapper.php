@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Component\Plugin;
 
 use Drupal\Component\Plugin\Mapper\MapperInterface;

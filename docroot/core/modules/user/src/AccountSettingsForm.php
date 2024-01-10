@@ -305,11 +305,7 @@ class AccountSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
       '#config_target' => 'user.mail:status_activated.subject',
-      '#states' => [
-        'required' => [
-          'input[name="user_mail_status_activated_notify"]' => ['checked' => TRUE],
-        ],
-      ],
+      '#required' => TRUE,
       '#maxlength' => 180,
     ];
     $form['email_activated']['settings']['user_mail_status_activated_body'] = [
@@ -343,11 +339,7 @@ class AccountSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
       '#config_target' => 'user.mail:status_blocked.subject',
-      '#states' => [
-        'required' => [
-          'input[name="user_mail_status_blocked_notify"]' => ['checked' => TRUE],
-        ],
-      ],
+      '#required' => TRUE,
       '#maxlength' => 180,
     ];
     $form['email_blocked']['settings']['user_mail_status_blocked_body'] = [
@@ -401,11 +393,7 @@ class AccountSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
       '#config_target' => 'user.mail:status_canceled.subject',
-      '#states' => [
-        'required' => [
-          'input[name="user_mail_status_canceled_subject"]' => ['checked' => TRUE],
-        ],
-      ],
+      '#required' => TRUE,
       '#maxlength' => 180,
     ];
     $form['email_canceled']['settings']['user_mail_status_canceled_body'] = [

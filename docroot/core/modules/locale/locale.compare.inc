@@ -267,8 +267,7 @@ function _locale_translation_batch_status_operations($projects, $langcodes, $opt
 
   foreach ($projects as $project) {
     foreach ($langcodes as $langcode) {
-      // Check version and status translation sources.
-      $operations[] = ['locale_translation_batch_version_check', [$project, $langcode]];
+      // Check status of local and remote translation sources.
       $operations[] = ['locale_translation_batch_status_check', [$project, $langcode, $options]];
     }
   }

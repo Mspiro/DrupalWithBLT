@@ -15,7 +15,6 @@ use Drupal\Tests\TestFileCreationTrait;
  * Tests creation, deletion, and editing of image styles and effects.
  *
  * @group image
- * @group #slow
  */
 class ImageAdminStylesTest extends ImageFieldTestBase {
 

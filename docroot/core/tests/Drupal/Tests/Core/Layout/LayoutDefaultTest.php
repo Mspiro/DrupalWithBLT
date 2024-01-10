@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Core\Layout;
 
 use Drupal\Core\Layout\LayoutDefault;

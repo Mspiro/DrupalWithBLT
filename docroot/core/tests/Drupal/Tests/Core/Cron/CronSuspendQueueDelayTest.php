@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Core\Cron;
 
 use Drupal\Component\Datetime\TimeInterface;

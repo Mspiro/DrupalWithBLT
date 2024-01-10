@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Component\FrontMatter;
 
 use Drupal\Component\FrontMatter\Exception\FrontMatterParseException;

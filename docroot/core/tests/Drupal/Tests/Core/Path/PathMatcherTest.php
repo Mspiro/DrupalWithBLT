@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\Core\Path;
 
 use Drupal\Core\Path\PathMatcher;

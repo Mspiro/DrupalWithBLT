@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\comment\Unit\Plugin\views\field;
 
 use Drupal\comment\Plugin\views\field\EntityLink;

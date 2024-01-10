@@ -50,7 +50,6 @@ class MediaAccessControlHandler extends EntityAccessControlHandler implements En
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    /** @var \Drupal\media\MediaInterface $entity */
     // Allow admin permission to override all operations.
     if ($account->hasPermission($this->entityType->getAdminPermission())) {
       return AccessResult::allowed()->cachePerPermissions();
@@ -122,17 +121,18 @@ class MediaAccessControlHandler extends EntityAccessControlHandler implements En
       case 'view all revisions':
       case 'view revision':
         if ($account->hasPermission('view any ' . $type . ' media revisions') || $account->hasPermission("view all media revisions")) {
-          // Check the access to this revision and if the media passed in is not
-          // the default revision then access to that too.
-          $entity_access = $entity->access('view', $account, TRUE);
-          if (!$entity->isDefaultRevision()) {
-            $media_storage = $this->entityTypeManager->getStorage($entity->getEntityTypeId());
-            $entity_access->andIf($this->access($media_storage->load($entity->id()), 'view', $account, TRUE));
-          }
-
-          return AccessResult::allowed()->cachePerPermissions()->andIf($entity_access);
+          return AccessResult::allowed()->cachePerPermissions();
         }
-        return AccessResult::neutral()->cachePerPermissions();
+
+        // First check the access to the default revision and finally, if the
+        // media passed in is not the default revision then access to that,
+        // too.
+        $media_storage = $this->entityTypeManager->getStorage($entity->getEntityTypeId());
+        $access = $this->access($media_storage->load($entity->id()), 'view', $account, TRUE);
+        if (!$entity->isDefaultRevision()) {
+          $access = $access->andIf($this->access($entity, 'view', $account, TRUE));
+        }
+        return $access->cachePerPermissions()->addCacheableDependency($entity);
 
       case 'revert':
         return AccessResult::allowedIfHasPermission($account, 'revert any ' . $type . ' media revisions')

@@ -42,5 +42,3 @@ migration_dependencies:
   required:
     - language
     - d7_taxonomy_term
-  optional:
-    - d7_language_content_taxonomy_vocabulary_settings

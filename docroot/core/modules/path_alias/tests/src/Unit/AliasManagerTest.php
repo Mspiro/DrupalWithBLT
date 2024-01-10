@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Drupal\Tests\path_alias\Unit;
 
 use Drupal\Core\Language\Language;
