@@ -1,2 +1,5 @@
 project:
   machine_name: drupalblt
+git:
+  hooks:
+    commit-msg: false
