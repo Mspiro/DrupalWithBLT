@@ -1,0 +1,86 @@
+{
+    "name": "acquia/blt",
+    "description": "BLT",
+    "license": "GPL-2.0-only",
+    "type": "composer-plugin",
+    "keywords": [
+        "drupal",
+        "deployment",
+        "automation",
+        "template"
+    ],
+    "authors": [
+        {
+            "name": "Matthew Grasmick"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/acquia/blt/issues",
+        "docs": "https://docs.acquia.com/blt/"
+    },
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*",
+        "composer-plugin-api": "^2.0",
+        "composer-runtime-api": "^2.0",
+        "acquia/drupal-environment-detector": "^1.5.3",
+        "consolidation/comments": "^1.0",
+        "consolidation/config": "^2.0.0",
+        "consolidation/robo": "^4",
+        "dflydev/dot-access-data": "^3",
+        "doctrine/annotations": "^1.10.0",
+        "drupal/core": "^10.0.0",
+        "drush/drush": "^12",
+        "enlightn/security-checker": "^1.3",
+        "grasmash/yaml-cli": "^3.0.0",
+        "grasmash/yaml-expander": "^3.0.2",
+        "loophp/phposinfo": "^1.7.1",
+        "symfony/config": "^6",
+        "symfony/console": "^6",
+        "symfony/filesystem": "^6",
+        "symfony/twig-bridge": "^6",
+        "symfony/yaml": "^6"
+    },
+    "require-dev": {
+        "acquia/coding-standards": "^2.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "conflict": {
+        "acquia/blt-behat": "<=1.0.0"
+    },
+    "suggest": {
+        "davereid/drush-acquia-hook-invoke": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Acquia\\Blt\\": "src/",
+            "Acquia\\Blt\\Tests\\": "tests/phpunit/src/",
+            "Acquia\\Blt\\Tests\\Robo\\": "tests/phpunit/Robo/"
+        }
+    },
+    "bin": [
+        "bin/blt",
+        "bin/blt.bat"
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "php": "8",
+        "platform": {
+            "php": "8.1"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "10.x-dev": "10.0.x-dev",
+            "dev-main": "13.x-dev"
+        },
+        "class": "Acquia\\Blt\\Composer\\Plugin",
+        "phpcodesniffer-search-depth": "4"
+    }
+}
